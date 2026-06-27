@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rule-Based AI Chatbot</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="app-wrapper">
+
+  <!-- ─── Sidebar ─────────────────────────────────── -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="bot-avatar">🤖</div>
+      <div>
+        <h2>ChatBot AI</h2>
+        <span class="status online">● Online</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <button class="nav-btn active" onclick="showPanel('chat')">💬 Chat</button>
+      <button class="nav-btn"        onclick="showPanel('rules')">📋 Rules</button>
+      <button class="nav-btn"        onclick="showPanel('history')">📜 History</button>
+    </nav>
+
+    <div class="stats-box">
+      <div class="stat"><span id="stat-msgs">0</span><small>Messages</small></div>
+      <div class="stat"><span id="stat-rules">0</span><small>Rules</small></div>
+    </div>
+
+    <div class="sidebar-footer">
+      <button id="theme-toggle" onclick="toggleTheme()">🌙 Dark mode</button>
+    </div>
+  </aside>
+
+  <!-- ─── Main ─────────────────────────────────────── -->
+  <main class="main">
+
+    <!-- Chat Panel -->
+    <section id="panel-chat" class="panel active">
+      <div class="chat-header">
+        <div>
+          <h1>Rule-Based AI Chatbot</h1>
+          <p class="subtitle">Pattern matching · Intent detection · Smart fallback</p>
+        </div>
+        <div class="header-actions">
+          <button onclick="clearChat()" title="Clear conversation">🗑 Clear</button>
+          <button onclick="exportChat()" title="Export to .txt">💾 Export</button>
+        </div>
+      </div>
+
+      <div id="chat-messages" class="chat-messages"></div>
+
+      <div class="chat-input-area">
+        <div class="quick-replies">
+          <button onclick="sendQuick('Hello!')">👋 Hello</button>
+          <button onclick="sendQuick('What can you do?')">❓ Help</button>
+          <button onclick="sendQuick('What time is it?')">🕐 Time</button>
+          <button onclick="sendQuick('Tell me a joke')">😄 Joke</button>
+          <button onclick="sendQuick('What is 25 * 4?')">🧮 Math</button>
+          <button onclick="sendQuick('Tell me a fun fact')">🌟 Fact</button>
+        </div>
+        <form class="input-form" onsubmit="handleSend(event)">
+          <input
+            id="user-input"
+            type="text"
+            placeholder="Type a message or /help for commands…"
+            autocomplete="off"
+            spellcheck="true"
+          >
+          <button type="submit">Send ➤</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Rules Panel -->
+    <section id="panel-rules" class="panel">
+      <div class="panel-header">
+        <h2>📋 Active Rules</h2>
+        <p>All pattern → response pairs loaded in the engine</p>
+      </div>
+      <div id="rules-list" class="rules-list"></div>
+    </section>
+
+    <!-- History Panel -->
+    <section id="panel-history" class="panel">
+      <div class="panel-header">
+        <h2>📜 Chat History</h2>
+        <p>Full session log — most recent first</p>
+      </div>
+      <div id="history-list" class="history-list"></div>
+    </section>
+
+  </main>
+</div>
+
+<script src="js/rules.js"></script>
+<script src="js/chatbot.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+# dataset.yaml — tells YOLOv8 where your images and labels are
+path: ./dataset
+train: images/train
+val:   images/val
+test:  images/test
+nc: 2
+names:
+  0: helmet
+  1: no_helmet
