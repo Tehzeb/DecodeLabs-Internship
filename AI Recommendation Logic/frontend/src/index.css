@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f3f4f8;
+  --surface: #ffffff;
+  --surface-2: #eceef5;
+  --border: #dbdfec;
+  --text: #171b2e;
+  --text-dim: #5b6485;
+  --accent: #b9740f;
+  --accent-2: #0e9488;
+  --danger: #d9483f;
+}
+
+.dark {
+  --bg: #0a0e1a;
+  --surface: #12182b;
+  --surface-2: #1a2138;
+  --border: #2a3352;
+  --text: #e7eaf3;
+  --text-dim: #92a0c4;
+  --accent: #f2b84b;
+  --accent-2: #33d6c0;
+  --danger: #ff6b6b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+::selection {
+  background: var(--accent);
+  color: #0a0e1a;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.chip-input input {
+  background: transparent;
+  outline: none;
+  border: none;
+  color: var(--text);
+}
+
+.tag-scroll::-webkit-scrollbar {
+  height: 6px;
+}

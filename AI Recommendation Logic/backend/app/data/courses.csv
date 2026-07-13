@@ -1,0 +1,62 @@
+course_id,title,provider,level,duration_weeks,rating,enrolled_k,skills,url
+C001,Python for Everybody Specialization,Coursera (University of Michigan),Beginner,8,4.8,2100,Python;Data Structures & Algorithms;Problem Solving,https://www.coursera.org/specializations/python
+C002,CS50's Introduction to Computer Science,edX (Harvard University),Beginner,12,4.9,4800,Data Structures & Algorithms;Problem Solving;Python;System Design,https://www.edx.org/cs50
+C003,Meta Front-End Developer Professional Certificate,Coursera (Meta),Beginner,20,4.7,350,JavaScript;React/Frontend Frameworks;HTML/CSS;Git,https://www.coursera.org/professional-certificates/meta-front-end-developer
+C004,Meta Back-End Developer Professional Certificate,Coursera (Meta),Intermediate,20,4.6,180,Python;SQL;REST APIs;System Design,https://www.coursera.org/professional-certificates/meta-back-end-developer
+C005,The Complete Node.js Developer Course,Udemy,Intermediate,6,4.7,220,Node.js;JavaScript;REST APIs;Testing & QA,https://www.udemy.com/course/the-complete-nodejs-developer-course-2
+C006,Machine Learning Specialization,Coursera (Stanford / DeepLearning.AI),Intermediate,12,4.9,4600,Machine Learning;Python;Statistics;Data Structures & Algorithms,https://www.coursera.org/specializations/machine-learning-introduction
+C007,Deep Learning Specialization,Coursera (DeepLearning.AI),Advanced,16,4.9,1200,Deep Learning;TensorFlow/PyTorch;Machine Learning;Python,https://www.coursera.org/specializations/deep-learning
+C008,IBM Data Science Professional Certificate,Coursera (IBM),Beginner,20,4.6,1300,Python;SQL;Data Visualization;Machine Learning;Statistics,https://www.coursera.org/professional-certificates/ibm-data-science
+C009,Google Data Analytics Professional Certificate,Coursera (Google),Beginner,24,4.8,2200,SQL;Data Visualization;BI Tools (Tableau/Power BI);Excel/Spreadsheets;Communication,https://www.coursera.org/professional-certificates/google-data-analytics
+C010,Google Advanced Data Analytics Professional Certificate,Coursera (Google),Intermediate,24,4.7,250,Python;Machine Learning;Statistics;Data Visualization,https://www.coursera.org/professional-certificates/google-advanced-data-analytics
+C011,Google IT Support Professional Certificate,Coursera (Google),Beginner,24,4.7,1900,Linux;Networking;Troubleshooting;Cybersecurity Fundamentals,https://www.coursera.org/professional-certificates/google-it-support
+C012,Google Cybersecurity Professional Certificate,Coursera (Google),Beginner,24,4.8,700,Cybersecurity Fundamentals;Network Security;Incident Response;Linux,https://www.coursera.org/professional-certificates/google-cybersecurity
+C013,IBM Cybersecurity Analyst Professional Certificate,Coursera (IBM),Beginner,24,4.6,220,Cybersecurity Fundamentals;Network Security;Penetration Testing;Incident Response,https://www.coursera.org/professional-certificates/ibm-cybersecurity-analyst
+C014,Ethical Hacking Specialization,Coursera (Infosec Institute),Intermediate,12,4.5,60,Penetration Testing;Network Security;Cybersecurity Fundamentals;Cryptography,https://www.coursera.org/specializations/ethical-hacking
+C015,Practical Ethical Hacking,Udemy (Heath Adams / TCM Security),Intermediate,6,4.8,210,Penetration Testing;Linux;Network Security,https://www.udemy.com/course/practical-ethical-hacking
+C016,AWS Certified Solutions Architect – Associate,Udemy (Stephane Maarek),Intermediate,8,4.7,900,Cloud Platforms;System Design;Networking;Cost Optimization,https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03
+C017,Google Cloud Digital Leader Training,Coursera (Google Cloud),Beginner,6,4.6,90,Cloud Platforms;Communication,https://www.coursera.org/professional-certificates/cloud-digital-leader-training
+C018,Microsoft Azure Fundamentals AZ-900,Udemy (Scott Duffy),Beginner,4,4.6,300,Cloud Platforms;Networking;Cybersecurity Fundamentals,https://www.udemy.com/course/az900-azure
+C019,Docker and Kubernetes: The Complete Guide,Udemy (Stephen Grider),Intermediate,10,4.7,280,Containers & Orchestration;CI/CD;Linux,https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide
+C020,HashiCorp Certified: Terraform Associate,Udemy (Zeal Vora),Intermediate,6,4.6,95,Terraform/IaC;Cloud Platforms;System Design,https://www.udemy.com/course/terraform-beginner-to-advanced
+C021,DevOps Bootcamp,Udemy (KodeKloud),Intermediate,10,4.7,200,CI/CD;Containers & Orchestration;Linux;Monitoring & Observability;Terraform/IaC,https://www.udemy.com/course/devops-bootcamp
+C022,Site Reliability Engineering: Measuring and Managing Reliability,Coursera (Google Cloud),Advanced,4,4.6,40,Monitoring & Observability;Incident Response;System Design,https://www.coursera.org/learn/site-reliability-engineering-slos
+C023,"Data Engineering, Big Data, and Machine Learning on GCP",Coursera (Google Cloud),Intermediate,8,4.6,60,Big Data Tools;ETL Pipelines;Cloud Platforms;SQL,https://www.coursera.org/specializations/gcp-data-machine-learning
+C024,Data Engineering Zoomcamp,DataTalksClub (self-paced),Intermediate,12,4.7,45,ETL Pipelines;SQL;Big Data Tools;Cloud Platforms,https://github.com/DataTalksClub/data-engineering-zoomcamp
+C025,The Complete SQL Bootcamp,Udemy (Jose Portilla),Beginner,5,4.7,350,SQL;Database Design,https://www.udemy.com/course/the-complete-sql-bootcamp
+C026,Database Design and Basic SQL in PostgreSQL,Coursera (University of Michigan),Beginner,4,4.7,60,Database Design;SQL;Backup & Recovery,https://www.coursera.org/learn/database-design-postgresql
+C027,Google Project Management Professional Certificate,Coursera (Google),Beginner,24,4.8,900,Agile/Scrum;Communication;Leadership;Product Strategy,https://www.coursera.org/professional-certificates/google-project-management
+C028,Digital Product Management Specialization,Coursera (University of Virginia),Intermediate,16,4.6,80,Product Strategy;UX Research;Communication;Leadership,https://www.coursera.org/specializations/uva-darden-digital-product-management
+C029,Google UX Design Professional Certificate,Coursera (Google),Beginner,24,4.8,900,UI Design;UX Research;Prototyping (Figma);Wireframing,https://www.coursera.org/professional-certificates/google-ux-design
+C030,UI / UX Design Specialization,Coursera (CalArts),Beginner,20,4.7,220,UI Design;Visual Design Systems;Prototyping (Figma),https://www.coursera.org/specializations/ui-ux-design
+C031,Meta Database Engineer Professional Certificate,Coursera (Meta),Intermediate,20,4.5,30,Database Design;SQL;Backup & Recovery;Performance Tuning,https://www.coursera.org/professional-certificates/meta-database-engineer
+C032,Blockchain Specialization,Coursera (University at Buffalo),Intermediate,16,4.5,90,Blockchain Fundamentals;Solidity/Smart Contracts;Cryptography,https://www.coursera.org/specializations/blockchain
+C033,Ethereum and Solidity: The Complete Developer's Guide,Udemy (Stephen Grider),Intermediate,12,4.6,110,Solidity/Smart Contracts;Blockchain Fundamentals;JavaScript,https://www.udemy.com/course/ethereum-and-solidity-the-complete-developers-guide
+C034,Natural Language Processing Specialization,Coursera (DeepLearning.AI),Advanced,16,4.6,180,NLP/Computer Vision;Deep Learning;Python;Machine Learning,https://www.coursera.org/specializations/natural-language-processing
+C035,Deep Learning for Computer Vision,Udemy (Various),Advanced,10,4.5,45,NLP/Computer Vision;Deep Learning;TensorFlow/PyTorch,https://www.udemy.com/course/deep-learning-computer-vision
+C036,Practical Deep Learning for Coders,fast.ai,Advanced,8,4.9,400,Deep Learning;Python;TensorFlow/PyTorch;Research & Experimentation,https://course.fast.ai
+C037,Mathematics for Machine Learning Specialization,Coursera (Imperial College London),Intermediate,12,4.6,300,Statistics;Machine Learning;Research & Experimentation,https://www.coursera.org/specializations/mathematics-machine-learning
+C038,Data Visualization with Tableau Specialization,Coursera (UC Davis),Beginner,12,4.6,130,Data Visualization;BI Tools (Tableau/Power BI);Communication,https://www.coursera.org/specializations/data-visualization
+C039,Microsoft Power BI Data Analyst Professional Certificate,Coursera (Microsoft),Beginner,16,4.7,140,BI Tools (Tableau/Power BI);SQL;Data Visualization,https://www.coursera.org/professional-certificates/microsoft-power-bi-data-analyst
+C040,The Complete Digital Marketing Course,Udemy (Rob Percival),Beginner,10,4.5,250,Communication;Product Strategy,https://www.udemy.com/course/learn-digital-marketing-course
+C041,Excel Skills for Business Specialization,Coursera (Macquarie University),Beginner,20,4.8,300,Excel/Spreadsheets;Data Visualization;Communication,https://www.coursera.org/specializations/excel
+C042,iOS & Swift - The Complete iOS App Development Bootcamp,Udemy (Angela Yu),Beginner,12,4.8,350,Kotlin/Swift;Mobile Development;UI Design,https://www.udemy.com/course/ios-13-app-development-bootcamp
+C043,The Complete Android 14 & Kotlin Development Masterclass,Udemy (Denis Panjuta),Beginner,12,4.6,90,Kotlin/Swift;Mobile Development;REST APIs,https://www.udemy.com/course/complete-android-kotlin-developer-course
+C044,React Native - The Practical Guide,Udemy (Maximilian Schwarzmüller),Intermediate,8,4.6,130,React Native/Flutter;JavaScript;Mobile Development,https://www.udemy.com/course/react-native-the-practical-guide
+C045,Flutter & Dart - The Complete Guide,Udemy (Maximilian Schwarzmüller),Intermediate,10,4.6,200,React Native/Flutter;Mobile Development;UI Design,https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps
+C046,Software Testing and Automation Specialization,Coursera (University of Minnesota),Intermediate,12,4.5,40,Testing & QA;Test Automation Frameworks;Problem Solving,https://www.coursera.org/specializations/software-testing-automation
+C047,Selenium WebDriver with Java,Udemy (Rahul Shetty),Intermediate,6,4.6,180,Test Automation Frameworks;Testing & QA,https://www.udemy.com/course/selenium-real-time-examples-tutorial
+C048,Version Control with Git,Coursera (Atlassian),Beginner,3,4.7,220,Git;Problem Solving,https://www.coursera.org/learn/version-control-with-git
+C049,Introduction to Networking,Coursera (Google via IT Support cert),Beginner,5,4.6,300,Networking;Troubleshooting,https://www.coursera.org/learn/computer-networking
+C050,CompTIA Network+ Certification Course,Udemy (Jason Dion),Beginner,10,4.7,150,Networking;Troubleshooting;Cybersecurity Fundamentals,https://www.udemy.com/course/comptia-network-plus
+C051,Linux Command Line Basics,Udemy (Various),Beginner,4,4.5,260,Linux;Scripting (Bash/Python),https://www.udemy.com/course/linux-command-line-basics
+C052,Bash Scripting and Shell Programming,Udemy (Jason Cannon),Intermediate,5,4.6,90,Scripting (Bash/Python);Linux;Problem Solving,https://www.udemy.com/course/bash-scripting-and-shell-programming-linux-command-line
+C053,Cryptography I,Coursera (Stanford University),Advanced,6,4.8,250,Cryptography;Cybersecurity Fundamentals,https://www.coursera.org/learn/crypto
+C054,"IT Governance, Risk and Compliance Specialization",Coursera (University System of Georgia),Intermediate,12,4.5,30,Compliance & Auditing;Risk Assessment;Communication,https://www.coursera.org/specializations/it-governance
+C055,Incident Response and Digital Forensics,Udemy (Various),Advanced,6,4.5,40,Incident Response;Cybersecurity Fundamentals;Network Security,https://www.udemy.com/course/incident-response-digital-forensics
+C056,Agile with Atlassian Jira,Coursera (Atlassian),Beginner,4,4.7,300,Agile/Scrum;Communication,https://www.coursera.org/learn/agile-atlassian-jira
+C057,Leading People and Teams Specialization,Coursera (University of Michigan),Intermediate,16,4.7,200,Leadership;Communication,https://www.coursera.org/specializations/leading-teams
+C058,System Design Interview Crash Course,Udemy (Sahn Lam),Advanced,6,4.7,90,System Design;Data Structures & Algorithms;Problem Solving,https://www.udemy.com/course/system-design-interview-crash-course
+C059,Grokking the System Design Interview,DesignGurus / Educative,Advanced,6,4.6,150,System Design;Problem Solving,https://www.educative.io/courses/grokking-the-system-design-interview
+C060,TensorFlow Developer Professional Certificate,Coursera (DeepLearning.AI),Intermediate,16,4.7,350,TensorFlow/PyTorch;Deep Learning;Python,https://www.coursera.org/professional-certificates/tensorflow-in-practice
+C061,Big Data Specialization,Coursera (UC San Diego),Intermediate,24,4.5,90,Big Data Tools;Data Visualization;SQL,https://www.coursera.org/specializations/big-data

@@ -1,0 +1,66 @@
+{
+  "Logistic Regression": {
+    "metrics": {
+      "accuracy": 0.9722,
+      "precision_macro": 0.9778,
+      "recall_macro": 0.9667,
+      "f1_macro": 0.971
+    }
+  },
+  "K-Nearest Neighbors": {
+    "metrics": {
+      "accuracy": 0.9722,
+      "precision_macro": 0.9697,
+      "recall_macro": 0.9762,
+      "f1_macro": 0.9718
+    }
+  },
+  "Support Vector Machine": {
+    "metrics": {
+      "accuracy": 0.9444,
+      "precision_macro": 0.9583,
+      "recall_macro": 0.9333,
+      "f1_macro": 0.9407
+    }
+  },
+  "Decision Tree": {
+    "metrics": {
+      "accuracy": 0.9444,
+      "precision_macro": 0.9583,
+      "recall_macro": 0.9389,
+      "f1_macro": 0.9457
+    }
+  },
+  "Random Forest": {
+    "metrics": {
+      "accuracy": 1.0,
+      "precision_macro": 1.0,
+      "recall_macro": 1.0,
+      "f1_macro": 1.0
+    }
+  },
+  "Gradient Boosting": {
+    "metrics": {
+      "accuracy": 1.0,
+      "precision_macro": 1.0,
+      "recall_macro": 1.0,
+      "f1_macro": 1.0
+    }
+  },
+  "Neural Network (MLP)": {
+    "metrics": {
+      "accuracy": 1.0,
+      "precision_macro": 1.0,
+      "recall_macro": 1.0,
+      "f1_macro": 1.0
+    }
+  },
+  "XGBoost": {
+    "metrics": {
+      "accuracy": 0.9722,
+      "precision_macro": 0.9744,
+      "recall_macro": 0.9762,
+      "f1_macro": 0.9743
+    }
+  }
+}

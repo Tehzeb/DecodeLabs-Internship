@@ -1,0 +1,81 @@
+{
+  "Logistic Regression": {
+    "file": "logistic_regression.pkl",
+    "best_params": {
+      "C": 1,
+      "solver": "lbfgs"
+    },
+    "best_cv_accuracy": 0.9790640394088669,
+    "train_time_sec": 6.301
+  },
+  "K-Nearest Neighbors": {
+    "file": "k-nearest_neighbors.pkl",
+    "best_params": {
+      "n_neighbors": 5,
+      "weights": "uniform"
+    },
+    "best_cv_accuracy": 0.9507389162561577,
+    "train_time_sec": 0.294
+  },
+  "Support Vector Machine": {
+    "file": "support_vector_machine.pkl",
+    "best_params": {
+      "C": 10,
+      "gamma": "scale",
+      "kernel": "rbf"
+    },
+    "best_cv_accuracy": 0.993103448275862,
+    "train_time_sec": 0.233
+  },
+  "Decision Tree": {
+    "file": "decision_tree.pkl",
+    "best_params": {
+      "max_depth": 5,
+      "min_samples_split": 2
+    },
+    "best_cv_accuracy": 0.9022167487684729,
+    "train_time_sec": 0.231
+  },
+  "Random Forest": {
+    "file": "random_forest.pkl",
+    "best_params": {
+      "max_depth": null,
+      "min_samples_split": 2,
+      "n_estimators": 100
+    },
+    "best_cv_accuracy": 0.9790640394088669,
+    "train_time_sec": 4.458
+  },
+  "Gradient Boosting": {
+    "file": "gradient_boosting.pkl",
+    "best_params": {
+      "learning_rate": 0.1,
+      "max_depth": 2,
+      "n_estimators": 200
+    },
+    "best_cv_accuracy": 0.9650246305418719,
+    "train_time_sec": 4.845
+  },
+  "Neural Network (MLP)": {
+    "file": "neural_network_mlp.pkl",
+    "best_params": {
+      "activation": "relu",
+      "alpha": 0.0001,
+      "hidden_layer_sizes": [
+        32
+      ]
+    },
+    "best_cv_accuracy": 0.9790640394088669,
+    "train_time_sec": 1.1
+  },
+  "XGBoost": {
+    "file": "xgboost.pkl",
+    "best_params": {
+      "learning_rate": 0.05,
+      "max_depth": 3,
+      "n_estimators": 200
+    },
+    "best_cv_accuracy": 0.958128078817734,
+    "train_time_sec": 1.168
+  }
+}
