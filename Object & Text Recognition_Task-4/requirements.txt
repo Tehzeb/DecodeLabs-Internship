@@ -1,0 +1,24 @@
+# --- Web framework ---------------------------------------------------
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+python-multipart==0.0.9
+
+# --- Computer vision / deep learning ---------------------------------
+torch==2.3.1
+torchvision==0.18.1
+opencv-python-headless==4.10.0.84
+Pillow==10.4.0
+numpy==1.26.4
+
+# --- Text recognition (OCR) -------------------------------------------
+easyocr==1.7.1
+
+# --- Object detection ---------------------------------------------------
+ultralytics==8.2.103
+
+# --- Text to speech ----------------------------------------------------
+pyttsx3==2.90
+pypiwin32==223; sys_platform == "win32"
+
+# --- Training / plotting (for train_digit_model.py) ---------------------
+matplotlib==3.9.2

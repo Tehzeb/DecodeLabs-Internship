@@ -1,1 +1,7 @@
-**/venv/
+**/venv/**/.venv/
+**/__pycache__/
+**/*.pyc
+**/backend/models/data/
+**/backend/models/saved/*.pth
+**/backend/models/saved/*.png
+**/backend/temp/

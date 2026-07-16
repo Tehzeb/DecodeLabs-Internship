@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Vision Console — Image &amp; Text Recognition</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- ============================ SIDEBAR ============================ -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="core3d"><div class="core3d-cube">
+        <div class="core3d-face f1"></div><div class="core3d-face f2"></div>
+        <div class="core3d-face f3"></div><div class="core3d-face f4"></div>
+        <div class="core3d-face f5"></div><div class="core3d-face f6"></div>
+      </div></div>
+      <div>
+        <div class="brand-title">AI Vision Console</div>
+        <div class="brand-sub">v1.0 · IMG-TXT-AI</div>
+      </div>
+    </div>
+
+    <div class="nav-eyebrow">Recognition Modules</div>
+    <nav class="nav">
+      <button class="nav-item active" data-panel="panel-ocr">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h10M4 18h16"/></svg>
+        Text Recognition
+      </button>
+      <button class="nav-item" data-panel="panel-detect">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><path d="M10 6.5h4M6.5 10v4"/></svg>
+        Object Recognition
+      </button>
+      <button class="nav-item" data-panel="panel-digit">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M5 8c0-3 2-5 7-5s7 2 7 5-2 4-7 4-7 1-7 4 2 5 7 5 7-2 7-5"/></svg>
+        Digit Recognition
+      </button>
+    </nav>
+
+    <div class="nav-eyebrow">Project</div>
+    <nav class="nav">
+      <button class="nav-item" data-panel="panel-about">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 16v-5M12 8h.01"/></svg>
+        Architecture &amp; About
+      </button>
+    </nav>
+
+    <div class="sidebar-footer">
+      INTERNSHIP PROJECT 04<br/>
+      Image &amp; Text Recognition — AI<br/>
+      FastAPI · PyTorch · OpenCV
+    </div>
+  </aside>
+
+  <!-- ============================= MAIN ============================= -->
+  <div>
+    <header class="topbar">
+      <div class="topbar-title">Module: <b id="topbarModuleName">Text Recognition (OCR)</b></div>
+      <div class="topbar-right">
+        <div class="status-pill"><span class="status-dot" id="backendDot"></span><span id="backendStatusText">checking backend…</span></div>
+        <div class="status-pill"><span class="status-dot" id="ocrDot"></span><span id="ocrStatusText">OCR engine</span></div>
+        <div class="status-pill"><span class="status-dot" id="detectDotStatus"></span><span id="detectStatusText">detector</span></div>
+        <div class="status-pill"><span class="status-dot" id="digitDot"></span><span id="digitStatusText">digit model</span></div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode">
+          <span class="knob" id="themeKnob">☾</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="main">
+
+      <!-- ---------------- OCR PANEL ---------------- -->
+      <section class="panel active" id="panel-ocr">
+        <div class="section-head">
+          <span class="eyebrow">Module 01 · Pretrained CRAFT + CRNN (EasyOCR)</span>
+          <h1>Text Recognition</h1>
+          <p class="desc">Upload a photo, scan, or screenshot containing text. The engine detects text regions, transcribes them, and can read the result aloud.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card tilt">
+            <div class="card-title">Input Image</div>
+            <label class="dropzone" id="dzOcr" tabindex="0">
+              <input type="file" id="fileOcr" accept="image/*" />
+              <div class="dz-content">
+                <svg class="dz-icon" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 16V4M12 4l-4 4M12 4l4 4"/><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg>
+                <div class="dz-text">Drag &amp; drop an image, or <b>click to browse</b></div>
+                <div class="dz-hint">PNG · JPG · WEBP — up to 15MB</div>
+              </div>
+            </label>
+            <div class="btn-row">
+              <button class="btn btn-primary" id="runOcr" disabled>
+                <span class="spinner"></span><span class="btn-label">Run Text Recognition</span>
+              </button>
+              <button class="btn btn-ghost" id="resetOcr">Clear</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Result <span id="ocrTiming" class="mono"></span></div>
+            <div id="ocrResultEmpty" class="result-empty">
+              <svg class="big-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 6h16M4 12h10M4 18h16"/></svg>
+              <div class="t1">Awaiting an image</div>
+              <div class="t2">/api/ocr</div>
+            </div>
+            <div id="ocrResultBody" style="display:none">
+              <div class="stat-row">
+                <div class="stat-chip"><div class="v" id="ocrCount">0</div><div class="l">Text regions</div></div>
+                <div class="stat-chip"><div class="v" id="ocrWords">0</div><div class="l">Words</div></div>
+              </div>
+              <div class="ocr-text-box" id="ocrText"></div>
+              <div class="btn-row">
+                <button class="btn btn-ghost btn-sm" id="copyOcr">Copy text</button>
+                <button class="btn btn-ghost btn-sm" id="speakOcr">🔊 Read aloud</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------- OBJECT DETECTION PANEL ---------------- -->
+      <section class="panel" id="panel-detect">
+        <div class="section-head">
+          <span class="eyebrow">Module 02 · Pretrained YOLOv8n</span>
+          <h1>Object &amp; Scene Recognition</h1>
+          <p class="desc">Upload any photo to detect and localize objects with bounding boxes, class labels, and confidence scores.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card tilt">
+            <div class="card-title">Input Image</div>
+            <label class="dropzone" id="dzDetect" tabindex="0">
+              <input type="file" id="fileDetect" accept="image/*" />
+              <div class="dz-content">
+                <svg class="dz-icon" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 16V4M12 4l-4 4M12 4l4 4"/><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg>
+                <div class="dz-text">Drag &amp; drop an image, or <b>click to browse</b></div>
+                <div class="dz-hint">PNG · JPG · WEBP — up to 15MB</div>
+              </div>
+            </label>
+            <div class="conf-slider-row">
+              <label>Detection quality</label>
+              <div class="quality-toggle" id="qualityToggle">
+                <button type="button" class="q-opt" data-q="fast">Fast</button>
+                <button type="button" class="q-opt active" data-q="balanced">Balanced</button>
+                <button type="button" class="q-opt" data-q="accurate">Accurate</button>
+              </div>
+              <div class="conf-slider-hint">"Accurate" uses a larger model + higher resolution — noticeably better on cluttered or close-up photos, but slower and downloads more on first use.</div>
+            </div>
+            <div class="conf-slider-row">
+              <label for="confSlider">Confidence threshold: <span class="mono" id="confSliderVal">0.25</span></label>
+              <input type="range" id="confSlider" min="0.10" max="0.75" step="0.05" value="0.25" />
+              <div class="conf-slider-hint">Lower = catches more objects (more false positives). Higher = fewer, more certain objects.</div>
+            </div>
+            <div class="btn-row">
+              <button class="btn btn-primary" id="runDetect" disabled>
+                <span class="spinner"></span><span class="btn-label">Run Object Recognition</span>
+              </button>
+              <button class="btn btn-ghost" id="resetDetect">Clear</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Result <span id="detectTiming" class="mono"></span></div>
+            <div id="detectResultEmpty" class="result-empty">
+              <svg class="big-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+              <div class="t1">Awaiting an image</div>
+              <div class="t2">/api/detect</div>
+            </div>
+            <div id="detectResultBody" style="display:none">
+              <div class="stat-row">
+                <div class="stat-chip"><div class="v" id="detectCount">0</div><div class="l">Objects found</div></div>
+                <div class="stat-chip"><div class="v" id="detectClasses">0</div><div class="l">Unique classes</div></div>
+              </div>
+              <div class="detect-list" id="detectList"></div>
+              <div class="vocab-note">
+                <b>Note:</b> this model recognizes 80 everyday COCO object classes
+                (person, car, phone, laptop, bottle, chair, etc). Some items —
+                notably wristwatches — aren't in that vocabulary and may be
+                labeled as the nearest available class (e.g. "clock"). Try
+                <b>Accurate</b> mode above for better results on cluttered or
+                close-up photos.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------- DIGIT RECOGNITION PANEL ---------------- -->
+      <section class="panel" id="panel-digit">
+        <div class="section-head">
+          <span class="eyebrow">Module 03 · Custom-trained CNN (trained from scratch on MNIST)</span>
+          <h1>Handwritten Digit Recognition</h1>
+          <p class="desc">This module uses a convolutional network trained end-to-end in this project (see <span class="mono">backend/models/train_digit_model.py</span>) — not a third-party API. Draw a digit or upload one.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card tilt">
+            <div class="card-title">Draw or Upload</div>
+            <div class="canvas-pad-wrap">
+              <canvas id="digitCanvas" width="260" height="260"></canvas>
+              <div class="btn-row" style="margin-top:0">
+                <button class="btn btn-ghost btn-sm" id="clearCanvas">Clear canvas</button>
+                <label class="btn btn-ghost btn-sm" style="cursor:pointer">
+                  Upload image instead
+                  <input type="file" id="fileDigit" accept="image/*" style="display:none" />
+                </label>
+              </div>
+            </div>
+            <div class="btn-row">
+              <button class="btn btn-primary" id="runDigit">
+                <span class="spinner"></span><span class="btn-label">Recognize Digit</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Prediction <span id="digitTiming" class="mono"></span></div>
+            <div id="digitResultEmpty" class="result-empty">
+              <svg class="big-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3v18M5 8c0-3 2-5 7-5s7 2 7 5-2 4-7 4-7 1-7 4 2 5 7 5 7-2 7-5"/></svg>
+              <div class="t1">Draw a digit (0–9) and press Recognize</div>
+              <div class="t2">/api/digit</div>
+            </div>
+            <div id="digitResultBody" style="display:none">
+              <div class="stat-row">
+                <div class="stat-chip"><div class="v" id="digitPredicted">–</div><div class="l">Predicted digit</div></div>
+                <div class="stat-chip"><div class="v" id="digitConfidence">–</div><div class="l">Confidence</div></div>
+              </div>
+              <div class="digit-bars" id="digitBars"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------- ABOUT PANEL ---------------- -->
+      <section class="panel" id="panel-about">
+        <div class="section-head">
+          <span class="eyebrow">System Overview</span>
+          <h1>Architecture &amp; About</h1>
+          <p class="desc">A hybrid computer-vision system combining pretrained deep learning models with one fully custom-trained network, wrapped in a REST API and a desktop-style local web console.</p>
+        </div>
+
+        <div class="card" style="margin-bottom:20px">
+          <div class="card-title">Request Flow</div>
+          <div class="arch-flow">
+            <div class="arch-node"><b>Browser UI</b>fetch() / FormData</div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-node"><b>FastAPI</b>REST endpoints</div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-node"><b>OpenCV</b>decode / preprocess</div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-node"><b>Model</b>EasyOCR / YOLOv8 / DigitCNN</div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-node"><b>JSON + Base64</b>annotated result</div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-title">Tech Stack</div>
+            <div class="badge-row">
+              <span class="badge">Python 3.10+</span>
+              <span class="badge">FastAPI</span>
+              <span class="badge">Uvicorn</span>
+              <span class="badge">PyTorch</span>
+              <span class="badge">EasyOCR</span>
+              <span class="badge">Ultralytics YOLOv8</span>
+              <span class="badge">OpenCV</span>
+              <span class="badge">pyttsx3 (TTS)</span>
+              <span class="badge">Vanilla JS / CSS3</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">Module Summary</div>
+            <div class="ocr-text-box" style="font-family:var(--font-body); font-size:13px;">
+<b>1. Text Recognition</b> — EasyOCR (CRAFT detector + CRNN recognizer), pretrained.
+<b>2. Object Recognition</b> — YOLOv8n, pretrained on COCO (80 classes).
+<b>3. Digit Recognition</b> — Custom CNN, trained from scratch on MNIST in this repo, ~99% test accuracy.
+<b>4. Text-to-Speech</b> — pyttsx3, fully offline (Windows SAPI5).
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-stack" id="toastStack"></div>
+
+<audio id="ttsAudio" style="display:none"></audio>
+
+<script src="js/app.js"></script>
+</body>
+</html>
